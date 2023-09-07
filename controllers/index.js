@@ -38,7 +38,7 @@ class IndexController {
         utc_time: currentDate.toISOString(),
         track: value.track,
         github_file_url:
-          "https://github.com/username/repo/blob/main/file_name.ext",
+          "https://github.com/Adedoyin-Emmanuel/hngx-backend/blob/master/index.js",
         github_repo_url: "https://github.com/Adedoyin-Emmanuel/hngx-backend",
         status_code: 200,
       });
