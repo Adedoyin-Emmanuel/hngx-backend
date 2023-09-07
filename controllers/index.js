@@ -31,11 +31,27 @@ class IndexController {
       const currentDate = new Date();
       const dayIndex = currentDate.getDay();
       const currentDayOfWeek = dayNames[dayIndex];
-
+      const formattedUtcTime = `${currentDate.getUTCFullYear()}-${(
+        currentDate.getUTCMonth() + 1
+      )
+        .toString()
+        .padStart(2, "0")}-${currentDate
+        .getUTCDate()
+        .toString()
+        .padStart(2, "0")}T${currentDate
+        .getUTCHours()
+        .toString()
+        .padStart(2, "0")}:${currentDate
+        .getUTCMinutes()
+        .toString()
+        .padStart(2, "0")}:${currentDate
+        .getUTCSeconds()
+        .toString()
+        .padStart(2, "0")}Z`;
       res.status(200).send({
         slack_name: value.slack_name,
         current_day: currentDayOfWeek,
-        utc_time: currentDate.toISOString().replace(/\.\d+/, "Z"),
+        utc_time: formattedUtcTime,
         track: value.track,
         github_file_url:
           "https://github.com/Adedoyin-Emmanuel/hngx-backend/blob/master/index.js",
