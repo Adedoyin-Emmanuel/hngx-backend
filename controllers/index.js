@@ -35,7 +35,7 @@ class IndexController {
       res.status(200).send({
         slack_name: value.slack_name,
         current_day: currentDayOfWeek,
-        utc_time: currentDate.toISOString(),
+        utc_time: currentDate.toISOString().replace(/\.\d+/, "Z"),
         track: value.track,
         github_file_url:
           "https://github.com/Adedoyin-Emmanuel/hngx-backend/blob/master/index.js",
